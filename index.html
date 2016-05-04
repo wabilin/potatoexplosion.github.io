@@ -1,7 +1,63 @@
 <!doctype html>
 <html>
-<head></head>
+<head>
+	<title>Explo~~~~sion!</title>
+	<meta charset="utf-8"/>
+	<script src="script/kuku.js"></script>
+	<link rel="stylesheet" type="text/css" href="style/reset.css"> 
+	<style type="text/css">
+	#kuku-div {
+		width: 800px;
+		height: 250px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin: -125px 0 0 -400px;
+		text-align:center;
+		background: rgba(255, 255, 255, 0.6);
+	}
+
+	#kuku-p {
+		font-size: 26pt;
+	}
+
+	#kuku-h {
+		font-size: 52pt;
+		margin-top:20px;
+		margin-bottom: 20px;
+	}
+
+	body {
+		background-image: url("img/megumin.jpg");
+	}
+	</style>
+</head>
 <body>
-<h1>Test</h1>
+
+<div id="kuku-div">
+<h1 id="kuku-h">オーラル・ディフェンス</h1>
+<p id="kuku-p"></p>
+</div>
+<script>
+	var updateKuku = function () {
+		var now = new Date();
+		var od = new Date(2016, 6, 30, 0, 0, 0, 0);
+		var kuku = datekuku(now, od);
+		
+		var content = "また";
+
+		content += kuku.day + "日<br>";
+		content += kuku.hr + "時";
+		content += kuku.min + "分";
+		content += kukuLeftpad(kuku.sec, 2) + "秒と";
+		content += kukuLeftpad(kuku.ms, 3) + "ミリセカンド！";
+
+		document.getElementById("kuku-p").innerHTML = content;
+	};
+
+	updateKuku();
+	setInterval(updateKuku, 100);
+
+</script>
 </body>
 </html>
