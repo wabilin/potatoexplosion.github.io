@@ -64,10 +64,10 @@
 		content += kukuLeftpad(kuku.ms, 3) + "ミリセカンド！";
 
 		document.getElementById("kuku-p").innerHTML = content;
+		requestAnimationFrame(updateKuku);
 	};
 
 	updateKuku();
-	setInterval(updateKuku, 100);
 
 </script>
 </body>
